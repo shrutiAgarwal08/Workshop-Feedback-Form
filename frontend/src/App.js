@@ -5,16 +5,16 @@ import FeedbackList from "./components/FeedbackList";
 export default function App() {
   const [feedbacks, setFeedbacks] = useState([]);
   useEffect(()=>{
-    fetch("http://localhost:8080/api/feedbacks")
+    fetch("https://workshop-feedback-backend.onrender.com/api/feedbacks")
     .then(res=>res.json())
     .then(data=>setFeedbacks(data))
     .catch(err=>console.error("Error fetching feedbacks",err));
   },[]);
 
   const handleAddFeedback=(newFB)=>{
-    fetch("http://localhost:8080/api/feedbacks",{method:"POST",headers:{"Content-type":"application/json"},body:JSON.stringify(newFB)})
+    fetch("https://workshop-feedback-backend.onrender.com/api/feedbacks",{method:"POST",headers:{"Content-type":"application/json"},body:JSON.stringify(newFB)})
     .then(res=>res.json())
-    .then(()=>{return fetch("http://localhost:8080/api/feedbacks").then(res=>res.json()).then(data=>setFeedbacks(data));})
+    .then(()=>{return fetch("https://workshop-feedback-backend.onrender.com/api/feedbacks").then(res=>res.json()).then(data=>setFeedbacks(data));})
     .catch(err=>console.error("Error saving feedbacks",err));
   };
   return (
