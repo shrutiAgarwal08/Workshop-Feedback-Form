@@ -61,7 +61,7 @@ export default function FeedbackForm({onSubmit}){
                 <textarea className="form-control" id="v4" value={message} onChange={(e)=>setMessage(e.target.value)} required></textarea>
             </div>
            <div className="col-12 mt-2">
-            <button type="submit" className="btn" style={{borderColor:"saddlebrown",color:"saddlebrown"}}>Submit</button>
+            <button type="submit" className="btn" style={{borderColor:"#0e3b43",color:"#0e3b43"}}>Submit</button>
            </div>
         </form>
     )

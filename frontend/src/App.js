@@ -18,11 +18,11 @@ export default function App() {
     .catch(err=>console.error("Error saving feedbacks",err));
   };
   return (
-    <div className="p-5" style={{ backgroundColor: 'burlywood', color: 'saddlebrown' }}>
+    <div className="p-5" style={{ backgroundColor: '#ad9c8e', color: '#0e3b43' }}>
       <FeedbackForm onSubmit={handleAddFeedback} />
       {feedbacks.length > 0 &&
         (<>
-            <hr style={{ borderColor: 'saddlebrown' }} />
+            <hr style={{ borderColor: '#0e3b43' }} />
             <FeedbackList feedbacks={feedbacks} />
         </>)
       }
